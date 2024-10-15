@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Ganancias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Ganancias</h1>
+
+        <!-- Colocamos la selección de mes y año como primera sección -->
+        <form id="calculo-form">
+
+            <!-- Sección de selección de Mes y Año -->
+            <div class="date-selection">
+                <label for="mes">Mes:</label>
+                <input type="text" id="mes" placeholder="Ej: Enero" required>
+
+                <label for="anio">Año:</label>
+                <input type="number" id="anio" placeholder="Ej: 2024" required>
+            </div>
+
+            <!-- Campos de cálculo -->
+            <label for="ingresos">Ingresos (codigo 563) :</label>
+            <input type="number" id="ingresos" placeholder="Ingresa los ingresos" required>
+
+            <label for="iva_credito">IVA Crédito (codigo 511):</label>
+            <input type="number" id="iva_credito" placeholder="Ingresa el IVA crédito" required>
+
+            <label for="iva_debito">IVA Débito (codigo 538):</label>
+            <input type="number" id="iva_debito" placeholder="Ingresa el IVA débito" required>
+
+            <label for="ppm">PPM:</label>
+            <input type="number" id="ppm" placeholder="Ingresa el PPM" required>
+
+            <label for="gastos_luz">Gastos Luz:</label>
+            <input type="number" id="gastos_luz" placeholder="Ingresa gastos de luz">
+
+            <label for="gastos_agua">Gastos Agua:</label>
+            <input type="number" id="gastos_agua" placeholder="Ingresa gastos de agua">
+
+            <label for="gastos_internet">Gastos Internet:</label>
+            <input type="number" id="gastos_internet" placeholder="Ingresa gastos de internet">
+
+            <label for="gastos_telefono">Gastos Teléfono:</label>
+            <input type="number" id="gastos_telefono" placeholder="Ingresa gastos de teléfono">
+
+            <button type="button" id="calcular-btn">Calcular</button>
+            <button type="button" id="limpiar-btn">Limpiar</button>
+        </form>
+
+        <div id="resultados">
+            <p id="ganancia_bruta"></p>
+            <p id="iva_a_pagar"></p>
+            <p id="gastos_comunes"></p>
+            <p id="ganancia_neta_sin_gastos"></p>
+            <p id="ganancia_neta_con_gastos"></p>
+        </div>
+
+        <div id="almacenados">
+            <h2>Resultados Guardados</h2>
+            <ul id="lista-resultados"></ul>
+
+            <label for="eliminar-id">Ingrese el índice del mes a eliminar:</label>
+            <input type="text" id="eliminar-id" placeholder="Ej. 1, 2, 3">
+            <button type="button" id="eliminar-seleccionado">Eliminar Seleccionado</button>
+
+            <h2>Sumar Ganancias de Varios Meses</h2>
+            <label for="meses-sumar">Ingrese los índices de los meses a sumar (separados por comas):</label>
+            <input type="text" id="meses-sumar" placeholder="Ej. 1,2,3">
+            <button type="button" id="sumar-meses-btn">Sumar Meses Seleccionados</button>
+
+            <p id="resultado-suma">Suma Total:</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
