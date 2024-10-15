@@ -29,10 +29,6 @@ document.getElementById('calcular-btn').addEventListener('click', function () {
     const mes = document.getElementById('mes').value.trim();
     const anio = document.getElementById('anio').value.trim();
 
-    if (!mes || !anio || ingresos <= 0 || ivaCredito < 0 || ivaDebito < 0 || ppm < 0) {
-        alert("Por favor, completa todos los campos correctamente.");
-        return;
-    }
 
     let resultadosGuardados = JSON.parse(localStorage.getItem('resultados')) || [];
     const nuevoId = resultadosGuardados.length > 0 ? resultadosGuardados[resultadosGuardados.length - 1].id + 1 : 1;
